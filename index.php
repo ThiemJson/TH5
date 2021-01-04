@@ -49,6 +49,7 @@ if (!empty($_GET['status'])) {
         <table class="table">
           <thead class="thead-dark">
             <tr>
+              <th>STT</th>
               <th>Mã sinh viên</th>
               <th>Họ đệm</th>
               <th>Tên</th>
@@ -65,11 +66,12 @@ if (!empty($_GET['status'])) {
           <tbody>
             <?php
             // Get member rows
-            $result = $db->query("SELECT * FROM sinhvien ORDER BY id DESC");
+            $result = $db->query("SELECT * FROM sinhvien ORDER BY id ASC");
             if ($result->num_rows > 0) {
               while ($row = $result->fetch_assoc()) {
             ?>
                 <tr>
+                  <td><?php echo $row['id']; ?></td>
                   <td><?php echo $row['maSV']; ?></td>
                   <td><?php echo $row['hodemSV']; ?></td>
                   <td><?php echo $row['tenSV']; ?></td>

@@ -5,8 +5,8 @@ include_once 'dbconfig.php';
 function formatDate($date){
     // 17/05/2000
     $year = substr($date,6,9);
-    $month = substr($date,3,3);
-    $day = substr($date,0,0);
+    $month = substr($date,3,2);
+    $day = substr($date,0,2);
 
     return $year."-".$month."-".$day;
 }
@@ -91,4 +91,4 @@ if (isset($_POST['importSubmit'])) {
 }
 
 // Redirect to the listing page
-header("Location: index.php" . $qstring);
+header("location:index.php");
